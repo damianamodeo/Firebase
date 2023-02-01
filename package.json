@@ -1,0 +1,40 @@
+{
+  "name": "proclaimer",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "SERVE": "vite --host",
+    "COMMIT": "git add -A && git commit -m 'scriptBackup' && git push",
+    "BUILD": "tsc && vite build",
+    "PREVIEW": "vite preview --host",
+    "GENERATE PWA ASSETS": "npx pwa-asset-generator src/icons/logo.svg src/icons/pwa --splash-only true --background $(grep -Po '^VITE_APP_SPLASH_SCREEN_COLOR=\\K.*' .env  ) --favicon true --padding '10%' && npx pwa-asset-generator src/icons/logo.svg public/assets --background $(grep -Po '^VITE_APP_SPLASH_SCREEN_COLOR=\\K.*' .env  ) --icon-only true",
+    "DEPLOY": "bash deploy.sh $(grep -Po '^VITE_APP_NAME=\\K.*' .env  )",
+    "IMPORT SUBMODULES": "git submodule add https://github.com/damianamodeo/UIComponents src/submodules/UIComponents/",
+    "UPDATE SUBMODULES": "git submodule update --remote --merge"
+  },
+  "dependencies": {
+    "formik": "^2.2.9",
+    "framer-motion": "^8.5.5",
+    "pwa-asset-generator": "^6.2.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-intersection-observer": "^9.4.1",
+    "vite-plugin-html": "^3.2.0",
+    "vite-plugin-svgr": "^2.4.0",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "@svgr/cli": "^6.5.1",
+    "@types/node": "^18.11.18",
+    "@types/react": "^18.0.26",
+    "@types/react-dom": "^18.0.9",
+    "@vitejs/plugin-react-swc": "^3.0.0",
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.20",
+    "tailwindcss": "^3.2.4",
+    "typescript": "^4.9.3",
+    "vite": "^4.0.0",
+    "vite-plugin-pwa": "^0.14.1"
+  }
+}
