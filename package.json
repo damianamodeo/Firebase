@@ -11,9 +11,10 @@
     "GENERATE PWA ASSETS": "npx pwa-asset-generator src/icons/logo.svg src/icons/pwa --splash-only true --background $(grep -Po '^VITE_APP_SPLASH_SCREEN_COLOR=\\K.*' .env  ) --favicon true --padding '10%' && npx pwa-asset-generator src/icons/logo.svg public/assets --background $(grep -Po '^VITE_APP_SPLASH_SCREEN_COLOR=\\K.*' .env  ) --icon-only true",
     "DEPLOY": "bash deploy.sh $(grep -Po '^VITE_APP_NAME=\\K.*' .env  )",
     "IMPORT SUBMODULES": "git submodule add https://github.com/damianamodeo/UIComponents src/submodules/UIComponents/",
-    "UPDATE SUBMODULES": "git submodule update --remote --merge"
+    "UPDATE SUBMODULES": "git submodule update --init --remote --merge"
   },
   "dependencies": {
+    "firebase": "^9.16.0",
     "formik": "^2.2.9",
     "framer-motion": "^8.5.5",
     "pwa-asset-generator": "^6.2.1",

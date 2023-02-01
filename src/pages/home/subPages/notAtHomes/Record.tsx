@@ -14,24 +14,11 @@ const header = ({ setCurrentSubpage }: any) => {
 };
 
 const content2 = ({ setCurrentSubpage }: any) => {
-	return (
-		<Content>
-
-			<div className={'font-noto'}>Locality: Ashtonfield</div>
-			<div className={'font-noto'}>Street: Ashtonfield</div>
-			<div className="mx-auto my-4">
-				<Button
-					color="primary"
-					clickAction={() => {
-						setCurrentSubpage(1, 1);
-					}}
-				>
-					Add
-				</Button>
-				<Form></Form>
-			</div>
-		</Content>
-	);
+	return <Content>
+		<div>
+			asdf
+		</div>
+	</Content>;
 };
 
 const pageOne = { header, content2 };
