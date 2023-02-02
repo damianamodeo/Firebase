@@ -25,9 +25,9 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 export const fdb = getFirestore();
 export const auth = getAuth(app)
-export const functions = getFunctions(getApp());
+export const cloudFunctions = getFunctions(getApp());
 if (import.meta.env.DEV) {
-  connectFunctionsEmulator(functions, "localhost", 5001);
+  connectFunctionsEmulator(cloudFunctions, "localhost", 5001);
   connectAuthEmulator(auth, "http://localhost:9099");
   connectFirestoreEmulator(fdb, "localhost", 8080);
 }

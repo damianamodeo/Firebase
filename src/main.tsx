@@ -10,6 +10,7 @@ if ('serviceWorker' in navigator) {
 	registerSW();
 }
 
+
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 	<React.StrictMode>
 		<Start></Start>
