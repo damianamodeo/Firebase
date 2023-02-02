@@ -9,6 +9,9 @@ export default ({ mode }) => {
 	process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };
 
 	return defineConfig({
+		optimizeDeps: {
+			exclude: ["firebase", "firebase/app", "firebase/auth", "firebase/firestore", "firebase/analytics"],
+		},
 		base: `/${process.env.VITE_APP_REPO}/`,
 		plugins: [
 			svgr({

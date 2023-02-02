@@ -1,50 +1,30 @@
-import Content from '@UICOMPONENTS/containers/Content';
-import Header from '@UICOMPONENTS/containers/Header';
-import Button from '@UICOMPONENTS/inputs/Button';
-import { useState } from 'react';
+import Content from '../../../submodules/UIComponents/src/components/containers/Content';
+import Header from '../../../submodules/UIComponents/src/components/containers/Header';
+import { useEffect, useState } from 'react';
+import ResetPassword from './components/ResetPassword';
 
-const header = () => {
+const header = ({ setCurrentSubpage }: any) => {
 	return (
 		<Header
-			headerLeft="Left 2"
-			title="Two"
-			headerRight="Right 2"
+			headerLeft={
+				<div
+					onClick={() => {
+						setCurrentSubpage(0, -1);
+					}}
+				>
+					Previous
+				</div>
+			}
+			title="Reset Password"
+			headerRight=""
 		></Header>
 	);
 };
 
 const content2 = ({ setCurrentSubpage }: any) => {
-
-	const [state, setState] = useState(false)
-	
 	return (
 		<Content>
-			This is Page Two content
-			{state && "hello"}
-			<Button
-				color="primary"
-				clickAction={() => {
-					setCurrentSubpage(2, 1);
-				}}
-			>
-				Forward to page 3
-			</Button>
-			<Button
-				color="primary"
-				clickAction={() => {
-					setCurrentSubpage(0, -1);
-				}}
-			>
-				Back to page 1
-			</Button>
-			<Button
-				color="primary"
-				clickAction={() => {
-					setState(!state);
-				}}
-			>
-				state
-			</Button>
+			<ResetPassword></ResetPassword>
 		</Content>
 	);
 };

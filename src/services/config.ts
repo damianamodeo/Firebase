@@ -2,7 +2,7 @@
 import { initializeApp, getApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getFirestore, connectFirestoreEmulator } from "firebase/firestore";
-import { connectAuthEmulator, getAuth } from "firebase/auth"
+import { connectAuthEmulator, getAuth, GoogleAuthProvider } from "firebase/auth"
 import { getFunctions, connectFunctionsEmulator } from "firebase/functions";
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -25,9 +25,10 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 export const fdb = getFirestore();
 export const auth = getAuth(app)
-export const cloudFunctions = getFunctions(getApp());
+export const googleProvider = new GoogleAuthProvider()
+// export const cloudFunctions = getFunctions(getApp());
 if (import.meta.env.DEV) {
-  connectFunctionsEmulator(cloudFunctions, "localhost", 5001);
+  // connectFunctionsEmulator(cloudFunctions, "localhost", 5001);
   connectAuthEmulator(auth, "http://localhost:9099");
   connectFirestoreEmulator(fdb, "localhost", 8080);
 }

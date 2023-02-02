@@ -1,13 +1,36 @@
-import Content from '@UICOMPONENTS/containers/Content';
-import Header from '@UICOMPONENTS/containers/Header';
-import Button from '@UICOMPONENTS/inputs/Button';
+import Content from '../../../submodules/UIComponents/src/components/containers/Content';
+import Header from '../../../submodules/UIComponents/src/components/containers/Header';
+import { useEffect, useState } from 'react';
+import Carousel from '@UICOMPONENTS/containers/Carousel';
+import ResetPassword from './components/ResetPassword';
+import SignUp from './components/SignUp';
+import SignUpWithGoogle from './components/SignUpWithGoogle';
+import LogOut from './components/LogOut';
 
-const header = () => {
+const header = ({ setCurrentSubpage }: any) => {
 	return (
 		<Header
-			headerLeft="Left 1"
-			title="One"
-			headerRight="Right 1"
+			headerLeft={
+				<div
+					className="p-2"
+					onClick={() => {
+						setCurrentSubpage(0, -1);
+					}}
+				>
+					Previous
+				</div>
+			}
+			title="Sign Up"
+			headerRight={
+				<div
+					className="p-2"
+					onClick={() => {
+						setCurrentSubpage(1, 1);
+					}}
+				>
+					Next
+				</div>
+			}
 		></Header>
 	);
 };
@@ -15,23 +38,14 @@ const header = () => {
 const content2 = ({ setCurrentSubpage }: any) => {
 	return (
 		<Content>
-			This is Page One content
-			<Button
-				color="primary"
-				clickAction={() => {
-					setCurrentSubpage(1, 1);
-				}}
-			>
-				Forward to page 2
-			</Button>
-			<Button
-				color="primary"
-				clickAction={() => {
-					setCurrentSubpage(2, 1);
-				}}
-			>
-				Forward to page 3
-			</Button>
+			<Carousel
+				carouselItems={[
+					{ title: 'Sign Up', content: <SignUp></SignUp> },
+					{ title: 'Reset', content: <ResetPassword></ResetPassword> },
+					{ title: 'Sign Up With Google', content: <SignUpWithGoogle></SignUpWithGoogle> },
+					{ title: 'Log Out', content: <LogOut></LogOut> },
+				]}
+			></Carousel>
 		</Content>
 	);
 };
