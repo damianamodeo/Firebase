@@ -3,7 +3,7 @@ import FormikForm from '../submodules/UIComponents/src/components/inputs/FormikF
 import Button from '../submodules/UIComponents/src/components/inputs/Button';
 import { auth, googleProvider } from '../services/config';
 import {
-	createUserWithEmailAndPassword,
+	createUserWithEmailAndPassword, 
 	signInWithPopup,
 	signOut,
 	getAuth,

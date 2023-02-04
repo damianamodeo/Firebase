@@ -3,9 +3,10 @@ import Header from '../../../submodules/UIComponents/src/components/containers/H
 import { useEffect, useState } from 'react';
 import Carousel from '@UICOMPONENTS/containers/Carousel';
 import ResetPassword from './components/ResetPassword';
-import SignUp from './components/SignUp';
-import SignUpWithGoogle from './components/SignUpWithGoogle';
+import SignUp from './components/SignUpWithPassword';
+import SignUpWithGoogle from './components/SignInWithGoogle';
 import LogOut from './components/LogOut';
+import LogIn from './components/SignIn';
 
 const header = ({ setCurrentSubpage }: any) => {
 	return (
@@ -41,8 +42,9 @@ const content2 = ({ setCurrentSubpage }: any) => {
 			<Carousel
 				carouselItems={[
 					{ title: 'Sign Up', content: <SignUp></SignUp> },
-					{ title: 'Reset', content: <ResetPassword></ResetPassword> },
 					{ title: 'Sign Up With Google', content: <SignUpWithGoogle></SignUpWithGoogle> },
+					{ title: 'Reset', content: <ResetPassword></ResetPassword> },
+					{ title: 'Log In', content: <LogIn></LogIn> },
 					{ title: 'Log Out', content: <LogOut></LogOut> },
 				]}
 			></Carousel>
