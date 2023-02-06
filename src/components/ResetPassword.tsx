@@ -1,7 +1,7 @@
-import Input from '../../../../submodules/UIComponents/src/components/inputs/Input';
-import FormikForm from '../../../../submodules/UIComponents/src/components/inputs/FormikForm';
-import Button from '../../../../submodules/UIComponents/src/components/inputs/Button';
-import { auth } from '../../../../services/config';
+import Input from '@UICOMPONENTS/inputs/Input';
+import FormikForm from '@UICOMPONENTS/inputs/FormikForm';
+import Button from '@UICOMPONENTS/inputs/Button';
+import { auth } from '@SERVICES/firebase/config';
 import { sendPasswordResetEmail } from 'firebase/auth';
 
 type AuthType = {

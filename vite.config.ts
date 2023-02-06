@@ -106,6 +106,7 @@ export default ({ mode }) => {
 		resolve: {
 			alias: {
 				'@PAGES': path.resolve(__dirname, './src/pages'),
+				'@SERVICES': path.resolve(__dirname, 'src/services'),
 				'@UICOMPONENTS': path.resolve(__dirname, 'src/submodules/UIComponents/src/components'),
 			},
 		},

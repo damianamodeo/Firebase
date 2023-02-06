@@ -6,29 +6,17 @@ import SignUp from '../../../components/SignUpWithPassword';
 import SignUpWithGoogle from '../../../components/SignInWithGoogle';
 import LogOut from '../../../components/LogOut';
 import LogIn from '../../../components/SignIn';
+import Button from '@UICOMPONENTS/inputs/Button';
 
 const header = ({ setCurrentSubpage }: any) => {
 	return (
 		<Header
-			headerLeft={
-				<div
-					className="p-2"
-					onClick={() => {
-						setCurrentSubpage(0, -1);
-					}}
-				>
-					Back
-				</div>
-			}
-			title="Authentication"
+			headerLeft={<div className=""></div>}
+			title="Firebase"
 			headerRight={
 				<div
-					className="p-2"
-					onClick={() => {
-						setCurrentSubpage(2, 1);
-					}}
+					className=""
 				>
-					Next
 				</div>
 			}
 		></Header>
@@ -38,15 +26,26 @@ const header = ({ setCurrentSubpage }: any) => {
 const content2 = ({ setCurrentSubpage }: any) => {
 	return (
 		<Content>
-			<Carousel
-				carouselItems={[
-					{ title: 'Log In', content: <LogIn></LogIn> },
-					{ title: 'Sign In With Google', content: <SignUpWithGoogle></SignUpWithGoogle> },
-					{ title: 'Log Out', content: <LogOut></LogOut> },
-					{ title: 'Sign Up', content: <SignUp></SignUp> },
-					{ title: 'Reset', content: <ResetPassword></ResetPassword> },
-				]}
-			></Carousel>
+			<div className='m-auto'>
+				<div className="w-96">
+
+				<Button
+					color="primary"
+					clickAction={() => setCurrentSubpage(1, 1)}
+					>
+					Authentication
+				</Button>
+					</div>
+				<br />
+				<div className="w-96">
+				<Button
+					color="primary"
+					clickAction={() => setCurrentSubpage(2, 1)}
+					>
+					CRUD
+				</Button>
+					</div>
+			</div>
 		</Content>
 	);
 };

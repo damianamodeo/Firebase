@@ -18,6 +18,7 @@
 		"baseUrl": "./",
 		"paths": {
 			"@PAGES/*": ["./src/pages/*"],
+			"@SERVICES/*": ["./src/services/*"],
 			"@UICOMPONENTS/*": ["src/submodules/UIComponents/src/components/*"]
 		}
 	},

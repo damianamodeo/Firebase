@@ -1,4 +1,4 @@
-import ButtonsPage from '@PAGES/buttons/ButtonsPage';
+import ButtonsPage from '@PAGES/settings/settingsPage';
 import homePages from '@PAGES/home/homePages';
 import Navbar from '@UICOMPONENTS/containers/Navbar';
 import Screen from '@UICOMPONENTS/containers/Screen';

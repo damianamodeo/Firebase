@@ -1,22 +1,26 @@
-import Content from '../../../submodules/UIComponents/src/components/containers/Content';
-import Header from '../../../submodules/UIComponents/src/components/containers/Header';
-import { useEffect, useState } from 'react';
-import ResetPassword from './components/ResetPassword';
+import Content from '@UICOMPONENTS/containers/Content';
+import Header from '@UICOMPONENTS/containers/Header';
+import Carousel from '@UICOMPONENTS/containers/Carousel';
+import SignUpWithGoogle from '../../../components/SignInWithGoogle';
+import LogIn from '../../../components/SignIn';
+import Transactions from '@PAGES/home/subPages/subPages/Transactions';
+import Map from '@PAGES/home/subPages/subPages/Transactions copy';
 
 const header = ({ setCurrentSubpage }: any) => {
 	return (
 		<Header
 			headerLeft={
 				<div
+					className="p-2"
 					onClick={() => {
-						setCurrentSubpage(0, -1);
+						setCurrentSubpage(1, -1);
 					}}
 				>
-					Previous
+					Back
 				</div>
 			}
-			title="Reset Password"
-			headerRight=""
+			title="CRUD"
+			headerRight={''}
 		></Header>
 	);
 };
@@ -24,7 +28,10 @@ const header = ({ setCurrentSubpage }: any) => {
 const content2 = ({ setCurrentSubpage }: any) => {
 	return (
 		<Content>
-			<ResetPassword></ResetPassword>
+			<div id="map"></div>
+			<Carousel
+				carouselItems={[{ title: 'Transaction', content: <Transactions /> }, { title: 'Map', content: <Map /> }]}
+			></Carousel>
 		</Content>
 	);
 };
