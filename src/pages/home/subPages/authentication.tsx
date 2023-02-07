@@ -5,9 +5,9 @@ import ResetPassword from '../../../components/ResetPassword';
 import SignUp from '../../../components/SignUpWithPassword';
 import SignUpWithGoogle from '../../../components/SignInWithGoogle';
 import LogOut from '../../../components/LogOut';
-import LogIn from '../../../components/SignIn';
+import LogIn from '../../../components/LogIn';
 
-const header = ({ setCurrentSubpage }: any) => {
+const headerComponent = ({ setCurrentSubpage }: any) => {
 	return (
 		<Header
 			headerLeft={
@@ -35,7 +35,7 @@ const header = ({ setCurrentSubpage }: any) => {
 	);
 };
 
-const content2 = ({ setCurrentSubpage }: any) => {
+const contentComponent = ({ setCurrentSubpage }: any) => {
 	return (
 		<Content>
 			<Carousel
@@ -51,6 +51,6 @@ const content2 = ({ setCurrentSubpage }: any) => {
 	);
 };
 
-const pageOne = { header, content2 };
+const pageOne = { headerComponent, contentComponent };
 
 export default pageOne;

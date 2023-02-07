@@ -92,48 +92,8 @@ const Transactions = ({ children }: TransactionsType) => {
 		return unsub;
 	}, []);
 
-	const displaySuggestions = function (predictions: any, status: any) {
-		if (status != google.maps.places.PlacesServiceStatus.OK || !predictions) {
-			alert(status);
-			return;
-		}
-		setStreets(predictions);
-	};
-
-	const searchStreets = (suburb: string) => {
-		const service = new google.maps.places.AutocompleteService();
-		service.getQueryPredictions({ input: 'Metford' }, displaySuggestions);
-	};
-
-	const test = () => {
-    const pyrmont = { lat: -33.866, lng: 151.196 };
-    const pyrmont2 = { lat: -32.7867003, lng: 151.6187442 };
-		const map = new google.maps.Map(document.getElementById('map'), {
-			center: pyrmont,
-			zoom: 17,
-			mapId: '8d193001f940fde3',
-		});
-
-		// Create the places service.
-		const service = new google.maps.places.PlacesService(map);
-		service.nearbySearch(
-      { location: pyrmont, radius: 5000, type: "store" },
-			(results, status, pagination) => {
-				if (status !== 'OK' || !results) return;
-
-        results.forEach((result:any)=>{
-
-          console.log(result.name)
-        }
-
-        )
-			}
-		);
-	};
-
 	return (
 		<div className={`m-auto p-12`}>
-      
 			<Button
 				clickAction={addToArray}
 				color="primary"
@@ -141,7 +101,7 @@ const Transactions = ({ children }: TransactionsType) => {
 				Add Address to Not At Homes
 			</Button>
 			<Button
-				clickAction={() => test()}
+				clickAction={() => addToArray()}
 				color="primary"
 			>
 				Remove Address from Not At Homes

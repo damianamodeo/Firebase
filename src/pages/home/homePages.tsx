@@ -1,6 +1,6 @@
-import Page0 from './subPages/Page0';
-import Page1 from './subPages/Page1';
-import Page2 from './subPages/Page2';
+import Page0 from './subPages/home';
+import Page1 from './subPages/authentication';
+import Page2 from './subPages/crud';
 
 const ButtonsPage = [Page0, Page1, Page2];
 
